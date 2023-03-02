@@ -1,0 +1,67 @@
+numOfCores: 3
+deadline: 1000
+nodes:
+  f0:
+    assignedTo: 0
+    traceName: Fork0-trace
+    release: 0
+    deadline: 1000
+    order: 0
+    deps: []                        # Dependencies
+    accessTo: [[f1, 1], [C, 1]]     # Branches
+    response: 33
+  f1:
+    assignedTo: 1
+    traceName: Fork1-trace
+    release: 33
+    deadline: 1000
+    order: 0
+    deps: [f0]
+    accessTo: [[A, 1], [B, 1]]
+    response: 48
+  A:
+    assignedTo: 2
+    traceName: A-trace
+    release: 81
+    deadline: 1000
+    order: 0
+    deps: [f1]
+    accessTo: [[j0, 1]]
+    response: 20
+  B:
+    assignedTo: 3
+    traceName: B-trace
+    release: 81
+    deadline: 1000
+    order: 0
+    deps: [f1]
+    accessTo: [[j0, 1]]
+    response: 20
+  C:
+    assignedTo: 4
+    traceName: C-trace
+    release: 81
+    deadline: 1000
+    order: 0
+    deps: [f0]
+    accessTo: [[j1, 1]]
+    response: 20
+  j0:
+    assignedTo: 0
+    traceName: Fork0-trace
+    release: 0
+    deadline: 1000
+    order: 0
+    deps: [A, B]
+    accessTo: [[j1, 1]]
+    response: 33
+  j1:
+    assignedTo: 1
+    traceName: Fork1-trace
+    release: 33
+    deadline: 1000
+    order: 0
+    deps: [j0, C]
+    accessTo: []
+    response: 48
+schedulable: 1
