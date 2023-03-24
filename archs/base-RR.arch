@@ -1,0 +1,8 @@
+name baseArchitecture
+Cores 20
+Bus BusRR
+MemoryInstruction Cache 64 64 2 
+MemoryDATA Cache 64 64 2
+memDelay 10
+accDelay 1
+burstDelay 8

@@ -1,0 +1,7 @@
+procDemand 100
+memDemand 2
+UCBInstr 2 1 63
+ECBInstr 2 1 63
+UCBData 1 16438
+ECBData 1 16438
+nbTransactions 2
